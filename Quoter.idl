@@ -1,0 +1,12 @@
+interface Stock {
+  double price();
+
+  readonly attribute string symbol;
+  readonly attribute string full_name;
+};
+
+exception Invalid_Stock_Symbol {};
+
+interface Stock_Factory {
+	Stock get_stock(in string stock_symbol) raises (Invalid_Stock_Symbol);
+};
